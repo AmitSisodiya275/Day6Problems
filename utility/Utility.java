@@ -59,4 +59,18 @@ public class Utility {
 		}
 		return true;
 	}
+
+	// Logic of Reverse a number
+	public int doReverse(int n) {
+		int temp = n, rev = 0, remainder;
+		while (n != 0) {
+
+			remainder = n % 10;
+			n = n / 10;
+			rev *= 10;
+			rev += remainder;
+		}
+
+		return rev;
+	}
 }
