@@ -79,7 +79,7 @@ public class Utility {
 	public void generateCoupon(int n) {
 		int[] coupon = new int[n];
 		int counter = 0;
-		while (coupon[n-1] ==0) {
+		while (coupon[n - 1] == 0) {
 			Random random = new Random();
 			int couponNumber = random.nextInt(1000000) + 99999;
 			for (int i = 0; i < coupon.length; i++) {
@@ -89,8 +89,23 @@ public class Utility {
 			}
 			counter++;
 		}
-		for(int a : coupon) {
+		for (int a : coupon) {
 			System.out.println(a);
 		}
+	}
+
+	// Logic of Stop Watch simulator
+	public long startWatch() {
+		return System.currentTimeMillis();
+	}
+
+	public long stopWatch() {
+		System.out.println("StopWatch Stoped.");
+		return System.currentTimeMillis();
+	}
+
+	public void elapsedTime(long one, long two) {
+		long elaps = two - one;
+		System.out.println("Elapsed time is : " + elaps);
 	}
 }
