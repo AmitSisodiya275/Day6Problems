@@ -1,5 +1,6 @@
 package com.bridgelab.utility;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Utility {
@@ -72,5 +73,24 @@ public class Utility {
 		}
 
 		return rev;
+	}
+
+	// Logic of Coupon number generator
+	public void generateCoupon(int n) {
+		int[] coupon = new int[n];
+		int counter = 0;
+		while (coupon[n-1] ==0) {
+			Random random = new Random();
+			int couponNumber = random.nextInt(1000000) + 99999;
+			for (int i = 0; i < coupon.length; i++) {
+				if (couponNumber != coupon[i]) {
+					coupon[counter] = couponNumber;
+				}
+			}
+			counter++;
+		}
+		for(int a : coupon) {
+			System.out.println(a);
+		}
 	}
 }
